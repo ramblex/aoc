@@ -45,3 +45,5 @@ lib/
 
 # Bloop or Metals Scala build settings
 .scala-build/
+
+src/main/resources/*
