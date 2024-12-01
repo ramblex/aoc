@@ -1,0 +1,47 @@
+# SBT specific files
+target/
+project/target/
+project/project/
+
+# Eclipse, IntelliJ IDEA, and other IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+
+# SBT and Scala IDE specific files
+*.log
+*.class
+*.jar
+*.war
+*.swp
+*.swo
+
+# Scala build files
+*.scala-*
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# Dependency directories
+lib_managed/
+src_managed/
+target/
+
+# SBT / Scala plugin related files
+lib/
+.cache/
+
+# VSCode settings (optional, but may be useful)
+.vscode/
+
+# BSP (Build Server Protocol) settings
+.bsp/
+
+# Bloop or Metals Scala build settings
+.scala-build/
