@@ -12,20 +12,20 @@ class Day02Solution(var source: Source) {
     source.getLines().count { l => isSafeWithRemoval(lineToLevels(l)) }
   }
 
-  private def lineToLevels(line: String): Array[Int] = line.split(" ").map(x => x.toInt)
+  private def lineToLevels(line: String): Array[Int] = line.split(" ").map(_.toInt)
 
   private def isSafeWithRemoval(levels: Array[Int]): Boolean = {
     isSafe(levels) || levels.indices.exists { n => isSafe(levels.patch(n, Nil, 1)) }
   }
 
   private def isSafe(levels: Array[Int]): Boolean = {
-    var dir = ""
-    levels.sliding(2).forall { pair =>
+    levels.sliding(2).foldLeft(("", true)) { (acc, pair) =>
+      var (dir, result) = acc
       if (dir == "") {
         dir = direction(pair)
       }
-      isSafePair(dir, pair)
-    }
+      (dir, result && isSafePair(dir, pair))
+    }(1)
   }
 
   private def direction(pair: Array[Int]): String = {
