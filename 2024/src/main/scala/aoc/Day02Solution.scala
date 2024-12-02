@@ -19,13 +19,10 @@ class Day02Solution(var source: Source) {
   }
 
   private def isSafe(levels: Array[Int]): Boolean = {
-    levels.sliding(2).foldLeft(("", true)) { (acc, pair) =>
-      var (dir, result) = acc
-      if (dir == "") {
-        dir = direction(pair)
-      }
-      (dir, result && isSafePair(dir, pair))
-    }(1)
+    levels.sliding(2).foldLeft(("", true)) { case ((dir, result), pair) =>
+      val d = if (dir == "") direction(pair) else dir
+      (d, result && isSafePair(d, pair))
+    }._2
   }
 
   private def direction(pair: Array[Int]): String = {
