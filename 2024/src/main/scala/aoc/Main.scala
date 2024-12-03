@@ -27,6 +27,16 @@ object aoc {
           println(new Day02Solution(source).part2())
         }
       }
+      case "3.1" => {
+        scala.util.Using(scala.io.Source.fromResource("day03.txt")) { source => 
+          println(new Day03Solution(source).part1())
+        }
+      }
+      case "3.2" => {
+        scala.util.Using(scala.io.Source.fromResource("day03.txt")) { source => 
+          println(new Day03Solution(source).part2())
+        }
+      }
       case _ => { println("Not a valid day/part") }
     }
   }
