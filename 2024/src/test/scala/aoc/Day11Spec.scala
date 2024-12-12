@@ -13,12 +13,5 @@ class Day11Spec extends AnyFlatSpec with should.Matchers {
     }
     result.get should be (55312)
   }
-
-  "part2" should "return 0 for the example input" in {
-    val result = Using(Source.fromResource("day11_example.txt")) { source =>
-      new Day11Solution(source).part2()
-    }
-    result.get should be (0)
-  }
 }
 
